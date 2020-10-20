@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Ficha de trabalho 2, parte 2, exercício 1 -->
 <menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="PEI_FP_2_parte2_ex1.xsd">
     <pizza>
         <name>Veggie-Pizza</name>
