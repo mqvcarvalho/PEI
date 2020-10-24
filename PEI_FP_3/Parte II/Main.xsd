@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://estg.pt/Main" xmlns:common="http://estg.pt/CommonType"
+    xmlns:customer="http://estg.pt/Customer" xmlns:product="http://estg.pt/Product">
+
+    <xs:import schemaLocation="CommonTypes.xsd" namespace="http://estg.pt/CommonTypes"/>
+    <xs:import schemaLocation="ProductType.xsd" namespace="http://estg.pt/ProductTypes"/>
+    <xs:import schemaLocation="CustomerTypes.xsd" namespace="http://estg.pt/CustomerTypes"/>
+    
+    <xs:complexType name="faturas">
+        <xs:sequence>
+            <xs:element name="fatura" type="fatura"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="fatura">
+        <xs:sequence>
+            
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

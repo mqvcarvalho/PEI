@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" 
+    targetNamespace="http://www.faturas.com/CustomerTypes"
+    xmlns="http://www.faturas.com/CustomerTypes"
+    xmlns:c="http://www.faturas.com/CommonTypes"> 
+    
+    <xs:import namespace="http://www.faturas.com/CommonTypes" schemaLocation="CommonTypes.xsd"/>
+    
+    <xs:complexType name="data">
+        <xs:sequence>
+            <xs:element name="billing" type="billingAddress"/>
+            <xs:element name="shipping" type="shippingAddress"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="shippingAddress">
+        <xs:sequence>
+            <xs:element name="bAddress" type="c:address" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="billingAddress">
+        <xs:sequence>
+            <xs:element name="customer" type="xs:string"/>
+            <xs:element name="bAddress" type="c:address" />			
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+</xs:schema>

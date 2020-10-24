@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" 
+    xmlns="http://estg.pt/CommonTypes"
+    targetNamespace="http://www.faturas.com/CommonTypes">
+    
+    <xs:simpleType name="postal_code">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d{4}\-\d{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="country">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Portugal"/>
+            <xs:enumeration value="França"/>
+            <xs:enumeration value="Espanha"/>
+            <xs:enumeration value="Luxemburgo"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="payment">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Transferência"/>
+            <xs:enumeration value="PayPal"/>
+            <xs:enumeration value="Dinheiro"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="price">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="coin" type="xs:string" default="EUR"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:complexType name="address">
+        <xs:sequence>
+            <xs:element name="address" type="xs:string"/>
+            <xs:element name="number" type="xs:integer"/>
+            <xs:element name="postal-code" type="postal_code"/>
+            <xs:element name="city" type="xs:string"/>
+            <xs:element name="country" type="country"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+</xs:schema>
