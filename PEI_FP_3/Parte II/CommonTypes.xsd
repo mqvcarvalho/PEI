@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" 
-    xmlns="http://estg.pt/CommonTypes"
-    targetNamespace="http://www.faturas.com/CommonTypes">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" 
+    xmlns="http://www.estg.pt/CommonTypes"
+    targetNamespace="http://www.estg.pt/CommonTypes">
     
     <xs:simpleType name="postal_code">
         <xs:restriction base="xs:integer">
@@ -26,23 +26,17 @@
         </xs:restriction>
     </xs:simpleType>
     
-    <xs:complexType name="price">
-        <xs:simpleContent>
-            <xs:extension base="xs:string">
-                <xs:attribute name="coin" type="xs:string" default="EUR"/>
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
-    
-    <xs:complexType name="address">
+    <xs:complexType name="data">
         <xs:sequence>
-            <xs:element name="address" type="xs:string"/>
-            <xs:element name="number" type="xs:integer"/>
-            <xs:element name="postal-code" type="postal_code"/>
-            <xs:element name="city" type="xs:string"/>
-            <xs:element name="country" type="country"/>
+            <xs:element name="id" type="xs:decimal"/>
+            <xs:element name="date" type="date"/>
+            <xs:element name="payment" type="payment"/>
         </xs:sequence>
     </xs:complexType>
     
-    
+    <xs:simpleType name="date">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="yyyy/mm/dd"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>

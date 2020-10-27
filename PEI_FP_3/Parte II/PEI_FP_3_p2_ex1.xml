@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<faturas>
+<faturas  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.estg.pt/Main"
+    xsi:schemaLocation="http://www.estg.pt/Main Main.xsd">
     <fatura>
         <billing_address>
             <address>Rua Dr. Roberto Frias</address>
@@ -11,8 +13,7 @@
 
         <shipping_address>
             <name>Escola Superior de Tecnologia e Gestão</name>
-            <address>Rua do Curral</address>
-            <address_2>Casa do Curral</address_2>
+            <address>Rua do Curral, Casa do Curral</address>
             <postal_code>4610-156</postal_code>
             <city>Felgueiras</city>
             <country>Portugal</country>
